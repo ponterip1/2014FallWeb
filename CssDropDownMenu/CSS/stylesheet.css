@@ -1,0 +1,81 @@
+
+
+#wrapper {
+	width: 100%; /* Spans the width of the page */
+	height: 52px; 
+	margin: 0; /* Ensures there is no space between sides of the screen and the menu */
+	z-index: 99; /* Makes sure that your menu remains on top of other page elements */
+	position: relative; 
+	background-color: #8E8B87;
+	}
+
+.navbar	{
+	height: 50px;
+    padding: 0;
+	margin: 0;
+	position: absolute; /* Ensures that the menu doesn’t affect other elements */
+	border-right: 1px solid #7F7D7A; 
+	
+	}
+	
+.navbar li 	{
+	height: 50px;
+	width: 150px;  /* Each menu item is 150px wide */
+	float: left;  /* This lines up the menu items horizontally */
+	text-align: center;  /* All text is placed in the center of the box */
+	list-style: none;  /* Removes the default styling (bullets) for the list */
+	font: normal bold 12px/1.2em Arial, Verdana, Helvetica;  
+	padding: 0;
+	margin: 0;
+	background-color: #8E8B87;
+	border: 1px solid #7F7D7A;
+    }
+                        
+
+.navbar a	{							
+	padding: 18px 0;  /* Adds a padding on the top and bottom so the text appears centered vertically */
+	border-left: 1px solid #A5A29D; /* Creates a border in a slightly lighter shade of blue than the background.  Combined with the right border, this creates a nice effect. */
+	border-right: 1px solid #7F7D7A; /* Creates a border in a slightly darker shade of blue than the background.  Combined with the left border, this creates a nice effect. */
+	text-decoration: none;  /* Removes the default hyperlink styling. */
+	color: white; /* Text color is white */
+	display: block;
+	font-family: Verdana;
+	font-size: 20px;
+	}
+		
+
+.navbar li:hover, a:hover {        /* highlights item when hovered*/
+	background-color: #54879f;
+	} 
+
+
+.navbar .level2 {      			/*hides level2 list behind navbar*/
+	margin: 0;
+	padding: 0;
+	display: none;
+	
+	
+}
+
+.navbar li:hover .level2 {      /*reveals level2 when hovered*/
+	display: block;
+}
+
+.navbar .level3 {              /*hides level3 list behind navbar*/
+	margin-left: 150px;
+	margin-top: -50px;
+	padding: 0;
+	display: none;
+}
+
+.navbar li .level2 li:hover .level3 {    /* reveals level3 when hovered*/
+	display:block;
+}
+
+body {
+	background-color: #FC8466;
+}
+
+
+
+
