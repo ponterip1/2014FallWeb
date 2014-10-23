@@ -1,7 +1,7 @@
 <?php
 ini_set('display errors', 1);
 
-
+	include __DIR__ . '/../inc/_all.php';
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : null;
 $method = isset($_SERVER['HTTP_METHOD']) ? $_REQUEST['HTTP_METHOD'] : 'GET';
 $view = null;
