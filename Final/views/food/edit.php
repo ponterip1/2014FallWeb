@@ -18,6 +18,7 @@
                   <th>Fiber (g)</th>
                   <th>Protien (g)</th>
                   <th>Date</th>
+                  <th>Friends</th>
                 </tr>
               </thead>
               <tbody>
@@ -29,6 +30,7 @@
                   <td><input type="text" class="form-control" id="Fiber" name = "Fiber" placeholder="Fiber"  value="<?=$model['Fiber']?>"></td>
                   <td><input type="text" class="form-control" id="Protein" name = "Protein" placeholder="Protein"  value="<?=$model['Protein']?>"></td>
                   <td><input type="text" class="form-control" id="Date" name = "Date" placeholder="Date"  value="<?=date('m/d/Y H:i:s', strtotime( $model['Time'])) ?></td>
+                  <td><input type="text" class="form-control" id="Friends" name = "Friends" placeholder="Friends" value=<?=$model['Friends']?></td>
                 </tr>
               </tbody>
             </table>

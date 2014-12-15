@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `2014FallWeb_Food` (
   `Carbs` DECIMAL NOT NULL DEFAULT 0,
   `Fiber` DECIMAL NOT NULL DEFAULT 0,
   `Time` DATETIME NOT NULL,
+  `Friends` VARCHAR(255) NOT NULL,
   `UserId` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Food_Users1_idx` (`UserId` ASC),

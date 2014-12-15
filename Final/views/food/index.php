@@ -54,6 +54,7 @@
                   <th>Fiber (g)</th>
                   <th>Protien (g)</th>
                   <th>Date</th>
+                  <th>Friends</th>
                   <th></th>
                 </tr>
               </thead>
@@ -67,6 +68,7 @@
                 	<td>?=$rs['Fiber']?</td>
                 	<td>?=$rs['Protein']?</td>
                 	<td>?=$rs['Date']?</td>
+                	<td>?=$rs['Friends']?</td>
                 	<td>
 +					<a title="Edit" class="btn btn-default btn-sm toggle-modal" data-target="#myModal" href="?action=edit&id=<?=$rs['id']?>">
 +						<i class="glyphicon glyphicon-pencil"></i>
@@ -83,11 +85,23 @@
               </tbody>
             </table>
           </div>
+          
+          
+          <div class="well" ng-controller="social">
+          	<button class="btn btn-primary" ng-click="login()">FB Login</button>
+          	<br style="clear: both;"/>
+          	
+          		<img srt="http://graph.facebook.com/{{me.id}}/picture" style="float:left" />
+          		<b>{{me.name}}</b><br>
+          		{{me.email}}
+          </div>
          	
          	
          	
 	
-			
+		
+		<script src="http://platform.fatsecret.com/js?key=XXXXX&auto_load=true"></script>
+	
 		
 		<script type="text/javascript">
 			$(function(){
@@ -104,6 +118,38 @@
 				  		$("#myAlert").show();
 				})	
 			});
+			
+			
+			var $socialScope = null;
+			app.controller('social', function($scope){
+				$socialScope = $scope;
+				$scope.login = function(){
+					FB.login
+				}
+			}
+			
+			
+			var $socialScope = null;
+			app.controller('social', function($scope){
+				$socialScope = $scope;
+
+});
+
+
+			function checkLoginState() {
+				FB.getLoginStatus(function(response) {
+					$socialScope.status = response;
+					if (response.status === 'connected') {
+						FB.api('/me', function(response) {
+							$socialScope.me = response;
+							$socialScope.$apply();
+							console.log(response);
+						});
+					}
+				});
+			}
+			
+			
 			
 		</script>
 		
