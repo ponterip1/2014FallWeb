@@ -1,41 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Fitness Tracker Home Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link type= "text/css" rel= "stylesheet" href= "CSS/main.css"  />
-	</head>
-	
-	<body>	
-		
-		<div id= "wrapper">
-			<ul class= "navbar">
-				<li><a href= "index.php">Home</a></li>
-				<li><a href= "food.php">Food</a></li>
-				<li><a href= "exercise.php">Exercise</a></li>
-				<li><a href= "apps.php">Apps</a></li>
-				<li><a href= "blogs.php">Blogs</a></li>
-				<li><a href= "profile.php">Profile</a></li>
-			</ul>
-		</div>
-		
-		
-		<div class="exercise_description">
-			<h1>Exercise Tracker</h1>
-			<p>This is where you'll list all the exercises you have done to track your workouts</p>
-		</div>
-		
-		
-		<div class="exerciseButtons">
-		 	<a href="exercise_add.php"><button type="button" class="btn btn-default btn-md"><span class="glyphicon glyphicon-plus"></span> Add Workout</button></a>
-		 	<a href="exercise_remove.php"><button type="button" class="btn btn-default btn-md"><span class="glyphicon glyphicon-minus"></span> Remove Workout</button></a>
-		 	<a href="caloriecalculator.php"><button type="button" class="btn btn-default btn-md"><span class="glyphicon glyphicon-wrench"></span> Calorie Calculator</button></a>
-		 </div>
-		
-		<div class="table-responsive">
-            <table class="table table-striped">
+<form class="form-horizontal" action="?action=delete" method="post" >
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title" id="myModalLabel">Delete an exercise</h4>
+  </div>
+  	<div class="modal-body">
+  		
+  		<h5>Are you sure you want to delete <?=$model['Name']?> from <?=$model['Time']?>?</h5>
+  		
+  		
+  		<div class="table-responsive">
+            <table class="table table-hover">
               <thead>
                 <tr>
                   <th>Exercise</th>
@@ -98,8 +72,11 @@
               </tbody>
             </table>
           </div>
-		
-		
-		
-	</body>	
-</html>
+  		
+  	</div>
+	<div class="modal-footer">
+		<input type="hidden" name="id" value="<?=$model['id']?>" />
+		<a href="exercise.php">< input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" /></a>
+		<input type="submit" name="submit" class="btn btn-primary" value="Submit" />
+	</div>
+</form>

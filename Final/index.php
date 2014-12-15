@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Fitness Tracker Home Page</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -20,6 +22,7 @@
 				<li><a href= "profile.php">Profile</a></li>
 			</ul>
 		</div>
+	
 		
 		
 		<img src='images/HEALTHY-LIVING.jpg' id= "homepagecycle">
@@ -33,6 +36,17 @@
   				<a href="login.php"><button type="button" class="btn btn-primary btn-lg">Log In</button></a>
 			</h5>
 		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#top-nav").load("inc/_navbar.php", function(){
+					$(".index").addClass("active");					
+				});
+			});
+		</script>
 
 	</body>	
 </html>
